@@ -8,7 +8,4 @@
 
 ## Outline
 - Code Review
-- [Linked Lists]
-
-<!-- links -->
-[Linked Lists]: ./notes/singly_linked_list.md
+- Deep Dive with Linked Lists
