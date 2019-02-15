@@ -7,9 +7,6 @@
 
 ## Outline
 - Code Review
-- [Stacks]
-- [Queues]
+- Stacks
+- Queues
 
-<!-- links -->
-[Stacks]: ./notes/stacks_queues.md#what-is-a-stack
-[Queue]: ./notes/stacks_queues.md#what-is-a-queue
