@@ -29,7 +29,7 @@ class Bitmap(object):
         """
         import struct as s
         result = f'''
-            Type: {s.unpack('I', self.memory_view[0:2].tobytes())[0]}
+            Type: {self.memory_view[0:2].tobytes().decode()}
             Size: {s.unpack('I', self.memory_view[2:6].tobytes())[0]}
             Reserved 1: {s.unpack('H', self.memory_view[6:8].tobytes())[0]}
             Reserved 2: {s.unpack('H', self.memory_view[8:10].tobytes())[0]}
