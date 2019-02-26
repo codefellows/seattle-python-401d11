@@ -38,6 +38,11 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         # NOTE: Doesn't do anything with posted data
+
+        data_string = self.rfile.read(int(self.headers['Content-Length'])).decode()
+        print(data_string)
+        
+
         self.send_response_only(201)
         self.end_headers()
         self.wfile.write(b'<html><body><h1>POST!</h1></body></html>')
@@ -45,7 +50,8 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
 def run_forever():
 
-    port = int(os.environ['PORT'] or 5000)
+    # port = int(os.environ['PORT'] or 5000)
+    port = 5000
 
     server_address = ('localhost', port)
     
