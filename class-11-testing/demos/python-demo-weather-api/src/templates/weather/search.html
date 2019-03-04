@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/dino.png">
+  <title>Flask Demo</title>
+</head>
+<body>
+  <header>
+    <nav class="main_nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/search">Search</a></li>
+        <li><a href="/weather">Weather</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <h2>Search for cities</h2>
+      <form method="POST" action="/search">
+        <label for="zipcode">Zip Code</label>
+        <input id="zipcode" name="zipcode" type="text">
+        <input type="submit" value="Go">
+      </form>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+</html>
