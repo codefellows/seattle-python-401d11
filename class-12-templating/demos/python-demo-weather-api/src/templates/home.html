@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>I am home!!!</h2>
+<ul>
+
+  {% if foods %}
+  {% for food in foods %}
+  <li>{{ food }}</li>
+  {% endfor %}
+  {% else %}
+  <li>No food :(</li>
+  {% endif %}
+
+</ul>
+{% endblock content %}
+

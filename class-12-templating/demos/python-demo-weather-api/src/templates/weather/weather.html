@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <h2>Welcome to the Weather Book</h2>
+  {% for city in cities %}
+    <div class="city">
+      <p>Name: {{ city.name }}</p>
+      <p>Zipcode: {{ city.zipcode }}</p>
+    </div>
+  {% endfor %}
+</div>
+{% endblock content %}

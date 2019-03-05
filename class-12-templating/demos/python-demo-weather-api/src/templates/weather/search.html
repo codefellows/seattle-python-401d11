@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <h2>Search for cities</h2>
+  <form method="POST" action="{{ url_for(".company_search") }}">
+    {{ form.hidden_tag() }}
+    {{ form.zipcode.label }}{{ form.zipcode(size=20) }}
+    <input type="submit" value="Go">
+  </form>
+</div>
+{% endblock content %}

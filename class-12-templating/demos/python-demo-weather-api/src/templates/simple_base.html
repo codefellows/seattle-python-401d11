@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    {% block styles %}
+    {% endblock %}
+    <title>Simple</title>
+</head>
+<body>
+    <h1>Hi there</h1>
+    <!-- sub template stuff here -->
+    {% block content %}
+    sub stuff here should go here BUT from sub template
+    {% block specific %}
+    specific stuff
+    {% endblock %}
+    {% endblock content %}
+</body>
+</html>
