@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for("static", filename="css/normalize.css") }}">
+  <link rel="stylesheet" href="{{ url_for("static", filename="css/skeleton.css") }}">
+  <link rel="stylesheet" href="{{ url_for("static", filename="css/style.css") }}">
+  <link rel="icon" type="image/png" href="{{ url_for("static", filename="assets/dino.png") }}">
+  <title>Flask Demo</title>
+</head>
+<body>
+  <header>
+    <nav class="main_nav">
+      <ul>
+        <li><a href="{{ url_for(".home") }}">Home</a></li>
+        <li><a href="{{ url_for(".city_search") }}">Search</a></li>
+        <li><a href="{{ url_for(".weather_detail") }}">Weather</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% for message in get_flashed_messages() %}
+      <div class="flashed container">{{ message }}</div>
+    {% endfor %}
+
+    {% block content %}
+      <h2>No content</h2>
+    {% endblock content %}
+  </main>
+  <footer></footer>
+  {% block scripts %}
+
+  {% endblock scripts %}
+</body>
+</html>
