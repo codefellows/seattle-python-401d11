@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if get_categories() %}
+    <div class="container">
+      <h2>Search for cities</h2>
+      <form method="POST" action="{{ url_for(".city_search") }}">
+        {{ form.hidden_tag() }}
+        {{ form.zipcode.label }}{{ form.zipcode(size=20) }}
+        <input type="submit" value="Go">
+      </form>
+    </div>
+  {% else %}
+    <div class="container">
+      <h3>Please create a Category <a href="{{ url_for(".weather_detail") }}">here</a></h3>
+    </div>
+  {% endif %}
+{% endblock content %}
