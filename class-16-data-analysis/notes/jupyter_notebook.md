@@ -29,6 +29,8 @@ $ source ENV/bin/activate
 (ENV) $ pip install jupyter
 ```
 
+**Hey Instructor!** Those steps above are different than I'm expecting.  **_What is the meaning of this???_**.
+
 Starting a Jupyter Notebook is fairly straightforward.
 The notebook environment is initialized from the command line:
 
