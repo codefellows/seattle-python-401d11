@@ -1,6 +1,6 @@
 # Python and Jupyter Notebook
 
-The vast majority (if not the entirety) of our work this week will be performed in the [Jupyter Notebook](http://jupyter.org/){:target="_blank"} ecosystem.
+The vast majority (if not the entirety) of our data analysis work this week will be performed in the [Jupyter Notebook](http://jupyter.org/){:target="_blank"} ecosystem.
 Jupyter is an amazing tool for experimenting with code and including annotations.
 Much work in data science and machine learning, as well as plenty of work in the academic sciences, is done inside of and shared via Jupyter Notebooks.
 If we were artists, this would be our canvas.
