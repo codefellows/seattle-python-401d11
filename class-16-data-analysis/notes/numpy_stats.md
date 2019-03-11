@@ -158,14 +158,14 @@ What's the standard for that deviation?
 
 By math, we define it in the following way:
 
-![equation for standard deviation](http://www.sciweavers.org/upload/Tex2Img_1517533289/render.png){:target="_blank"}
+![equation for standard deviation](https://revisionmaths.com/gcse-maths-revision/statistics-handling-data/standard-deviation){:target="_blank"}
 
 Let's break this down into the questions that this equation answers:
 
-- ![distance from mean](http://www.sciweavers.org/upload/Tex2Img_1517533356/render.png){:target="_blank"}: "What's my distance from the mean?"
-- ![total distance across data set](http://www.sciweavers.org/upload/Tex2Img_1517533496/render.png){:target="_blank"}: "What’s the total distance from the mean across my data set?"
-- ![average distance from the mean](http://www.sciweavers.org/upload/Tex2Img_1517533516/render.png){:target="_blank"}: "What’s my average distance from the mean across my data set?"
-- ![unit correction and reduction](http://www.sciweavers.org/upload/Tex2Img_1517533536/render.png){:target="_blank"}: "Get my units right and reduce down from squared-distance."
+- "What's my distance from the mean?"
+- "What’s the total distance from the mean across my data set?"
+- "What’s my average distance from the mean across my data set?"
+- "Get my units right and reduce down from squared-distance."
 
 The larger the spread of the data, the larger the standard deviation.
 Consider the opposite––if every data point had the exact same value, the standard deviation would be zero.
