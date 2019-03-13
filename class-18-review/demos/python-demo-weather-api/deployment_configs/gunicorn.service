@@ -1,0 +1,13 @@
+[Unit]
+Description=Weather application for storing my favorite cities and finding weather updates
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+EnvironmentFile=/home/ubuntu/src/.env
+WorkingDirectory=/home/ubuntu/src
+ExecStart=/home/ubuntu/.local/bin/gunicorn --access-logfile - -w 3 src.wsgi:app
+
+[Install]
+WantedBy=multi-user.target

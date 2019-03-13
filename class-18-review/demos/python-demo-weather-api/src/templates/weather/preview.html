@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+  <p>City: {{ weather_data.name }}</p>
+  <p>Zip: {{ zipcode }}</p>
+
+  <form action="{{ url_for(".preview_weather") }}" method="POST">
+    {{ form.hidden_tag() }}
+    <div class="hidden" hidden>
+      {{ form.zipcode.label }}{{ form.zipcode(size=20) }}
+      {{ form.name.label }}{{ form.name(size=20) }}
+    </div>
+    {{ form.categories.label }}{{ form.categories() }}
+    <input type="submit" value="Go">
+  </form>
+</div>
+{% endblock %}

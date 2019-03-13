@@ -1,0 +1,24 @@
+header {
+  border-bottom: 0.05vh solid slategray;
+  box-shadow: 0 4px 2px -2px slategray;
+}
+
+.main_nav a {
+    text-decoration: none;
+}
+
+.main_nav li {
+    display: inline-block;
+}
+
+.main_nav li:after {
+    content: ' |';
+}
+
+.main_nav ul:before {
+    content: url('../assets/dino.png');
+}
+
+.company_labels {
+  font-weight: bold;
+}
