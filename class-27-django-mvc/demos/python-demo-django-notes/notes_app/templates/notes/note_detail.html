@@ -1,0 +1,10 @@
+{% extends "generic/base.html" %}
+
+{% block title %}Detail{% endblock %}
+
+{% block content %}
+<div class="note_detail">
+<h3>{{ note.title }} ({{ note.status }})</h3>
+<p>{{ note.detail }}</p>
+</div>
+{% endblock content %}
