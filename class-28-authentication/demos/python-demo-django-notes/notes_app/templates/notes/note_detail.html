@@ -1,0 +1,14 @@
+{% extends "generic/base.html" %}
+{% load tz %}
+
+{% block title %}Detail{% endblock %}
+
+{% block content %}
+<div class="note_detail">
+<h3>{{ note.title }} ({{ note.status }})</h3>
+<p>{{ note.detail }}</p>
+<p>Created: {{ note.date_created }}</p>
+<p>Modified: {{ note.date_modified|date:"SHORT_DATE_FORMAT" }}</p>
+<p>Completed: {{ note.date_completed|timezone:"America/Los_Angeles"|date:"SHORT_DATETIME_FORMAT" }}</p>
+</div>
+{% endblock content %}

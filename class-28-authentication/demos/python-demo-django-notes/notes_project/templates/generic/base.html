@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{% block title %}{% endblock %} - Notes!</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{% url "home" %}">Home</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url "note_list" %}">Notes</a></li>
+        {% if user.is_superuser %}
+        <li><a href="{% url "admin:index" %}">Admin</a></li>
+        {% endif %}
+        <li><a href="{% url "logout" %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url "django_registration_register" %}">Signup</a></li>
+        <li><a href="{% url "login" %}">Signin</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% if user.is_authenticated %}
+    <h3>Welcome to the site {{ user.username }}</h3>
+    {% endif %}
+  </header>
+  <main>
+    {% block content %}
+    <h3>No Content</h3>
+    {% endblock content%}
+  </main>
+  <footer></footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends "generic/base.html" %}
+
+{% block title %}List{% endblock %}
+
+{% block content %}
+<div class="note_list">
+{% for note in notes %}
+<h3><a href="{% url "note_detail" pk=note.id %}">{{ note.title }} ({{ note.status }})</a></h3>
+{% endfor %}
+</div>
+{% endblock content %}
