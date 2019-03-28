@@ -1,0 +1,17 @@
+{% extends "generic/base.html" %}
+{% load tz %}
+{% load template_extras %}
+
+{% block title %}Detail{% endblock %}
+
+{% block content %}
+<div class="note_detail">
+<h3>{{ note.title }} ({{ note.status }})</h3>
+  <p>Created: {{ note.date_created | get_date_string }}</p>
+  <p>Last Modified: {{ note.date_modified | get_date_string }}</p>
+  {% if note.status == 'complete' %}
+  <p>Completed: {{ note.date_completed | get_date_string }}</p>
+  {% endif %}
+<p>{{ note.detail }}</p>
+</div>
+{% endblock content %}
