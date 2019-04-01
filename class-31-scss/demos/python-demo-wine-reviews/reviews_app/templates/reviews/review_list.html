@@ -1,0 +1,11 @@
+{% extends 'generic/base.html' %}
+
+{% block content %}
+<h2>Welcome to the site! Check out our reviews!</h2>
+
+{% for review in reviews %}
+<a href="{% url "review_detail" pk=review.id %}">
+  <h3>({{ review.points }} pts){{ review.title }}</h3>
+</a>
+{% endfor %}
+{% endblock content %}
