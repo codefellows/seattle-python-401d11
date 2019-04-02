@@ -1,0 +1,34 @@
+{% load sass_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link type="text/css" rel="stylesheet" href="{% sass_src "main.scss" %}">
+  <title>Django Demo</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{% url "home" %}">Home</a></li>
+        {% if user.is_superuser %}
+        <li><a href="{% url "admin:index" %}">Admin</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content %}
+    <h3>No Content</h3>
+    {% endblock content%}
+  </main>
+  <footer>
+    {% if user.is_authenticated %}
+      <h3>You're currently logged in as {{ user.username }}</h3>
+    {% endif %}
+  </footer>
+</body>
+</html>

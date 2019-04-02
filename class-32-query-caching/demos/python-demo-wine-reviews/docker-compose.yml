@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:10.6-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+
+  web:
+    env_file: .env
+    build: .
+    container_name: "wine_reviews_web"
+    command: ./entrypoint.sh
+    volumes:
+      - .:/src
+    ports:
+      - "8000:8000"
+    links:
+      - db:postgres
+      - redis:redis
+
+volumes:
+  postgres_data:
+  redisdata:
