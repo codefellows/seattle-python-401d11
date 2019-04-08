@@ -1,0 +1,16 @@
+{% extends "generic/base.html" %}
+
+{% block content %}
+<div class="category_list">
+{% for category in categories %}
+<div class="status_{{ category }}">
+  <h2>{{ category }}</h2>
+  {% for card in cards %}
+    {% if card.category == category %}
+    <p><a href="{% url "card_detail" id=card.id %}">{{ card.title }}</a></p>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endfor %}
+</div>
+{% endblock content %}
