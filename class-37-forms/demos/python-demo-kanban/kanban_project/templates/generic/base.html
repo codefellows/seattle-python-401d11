@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="{% static "assets/../../static/assets/dino.png" %}">
+  <link rel="stylesheet" href="{% static "css/../../static/css/normalize.css" %}">
+  <link rel="stylesheet" href="{% static "css/../../static/css/skeleton.css" %}">
+  <link rel="stylesheet" href="{% static "css/../../static/css/style.css" %}">
+  <title>Django Demo</title>
+</head>
+<body>
+  <header>
+    <nav class="main_nav">
+      <ul>
+        <li><a href="{% url "home" %}">Home</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url "category_view" %}">Board</a></li>
+        {% if user.is_superuser %}
+        <li><a href="{% url "admin:index" %}">Admin</a></li>
+        {% endif %}
+        <li><a href="{% url "logout" %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url "django_registration_register" %}">Signup</a></li>
+        <li><a href="{% url "login" %}">Signin</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% if user.is_authenticated %}
+    <h3>Welcome to the site, {{ user.username }}</h3>
+    {% endif %}
+  </header>
+  <main>
+    {% block content %}
+    <h3>No Content</h3>
+    {% endblock content%}
+  </main>
+  <footer>
+    {% if user.is_authenticated %}
+      <h3>You're currently logged in as {{ user.username }}</h3>
+    {% endif %}
+  </footer>
+</body>
+</html>

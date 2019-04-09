@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:10.6-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+
+  web:
+    env_file: .env
+    build: .
+    ports:
+      - "8000:8000"
+    command: ./entrypoint.sh
+    volumes:
+      - .:/src
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
