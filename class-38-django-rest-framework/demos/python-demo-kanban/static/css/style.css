@@ -1,0 +1,15 @@
+.main_nav a {
+    text-decoration: none;
+}
+
+.main_nav li {
+    display: inline-block;
+}
+
+.main_nav li:after {
+    content: ' |';
+}
+
+.main_nav ul:before {
+    content: url('/static/assets/dino.png');
+}
