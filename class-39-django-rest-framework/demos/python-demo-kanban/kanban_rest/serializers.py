@@ -31,7 +31,7 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
 
 
 class CardSerializer(serializers.HyperlinkedModelSerializer):
-    category = serializers.HyperlinkedRelatedField(view_name='category-api', read_only=True)
+    category = serializers.HyperlinkedRelatedField(view_name='category-detail-api', read_only=True)
 
     class Meta:
         model = Card
