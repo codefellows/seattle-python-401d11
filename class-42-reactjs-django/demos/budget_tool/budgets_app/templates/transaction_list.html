@@ -1,0 +1,12 @@
+{% extends 'generic/base.html'%}
+
+{% block content %}
+<h4>{{ budget.name }} Transactions</h4>
+<ul>
+    {% for transaction in transactions %}
+    <li><a href="">{{ transaction.type }}: {{ transaction.description }}</a></li>
+    {% endfor %}
+</ul>
+
+<a class="button" href="{% url 'transaction_add' budget.id %}">Add Transaction</a>
+{% endblock content %}

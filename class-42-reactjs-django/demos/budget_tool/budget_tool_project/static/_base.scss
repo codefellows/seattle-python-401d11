@@ -1,0 +1,58 @@
+header, nav, footer, main h2, main h3, main h4 {
+    font-family: 'Montserrat', sans-serif;
+}
+header, footer {
+    padding: 0px 20px;
+}
+main {
+    padding: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+main h3 {
+    font-size: 2em;
+}
+nav ul li {
+    list-style-type: none;
+    margin: 0px;
+}
+nav ul li a {
+    display: block;
+    margin: 0px;
+    padding: 5px;
+    padding-left: 20px;
+    border: 1px solid darkgrey;
+    border-top: none;
+    color: darkolivegreen;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+nav ul li a:hover {
+    background-color: greenyellow;
+    color: darkorange;
+}
+header {
+    border-bottom: 2px solid darkgreen;
+}
+main p, main table td {
+    font-size: 1.2em;
+}
+main a {
+    color: darkslategray;
+}
+main a:hover {
+    color: darkorange;
+}
+main table thead th {
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.2em;
+}
+main table td {
+    padding-right: 30px;
+}
+footer {
+    border-top: 2px solid darkslategray;
+    background-color: gainsboro;
+    height: 30px;
+}

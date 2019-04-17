@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pep8 = "*"
+autopep8 = "*"
+
+[packages]
+django = "*"
+psycopg2-binary = "*"
+django-registration = "*"
+django-sass-processor = "*"
+libsass = "*"
+factory-boy = "*"
+faker = "*"
+djangorestframework = "*"
+django-cors-headers = "*"
+
+[requires]
+python_version = "3.7"

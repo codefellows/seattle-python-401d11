@@ -1,0 +1,14 @@
+{% extends 'generic/base.html'%}
+
+{% block content %}
+<h4>Your Budgets</h4>
+
+<ul>
+    {% for budget in budgets %}
+    <li><a href="{{ budget.id }}">{{ budget.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<a class="button" href="{% url 'budget_add' %}">Create New Budget</a>
+
+{% endblock content %}

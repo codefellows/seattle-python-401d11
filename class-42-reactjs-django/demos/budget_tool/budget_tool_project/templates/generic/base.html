@@ -1,0 +1,45 @@
+{% load static %}
+{% load sass_tags %}
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+        <meta charset ="UTF-8">
+        <meta name = "viewport content" content = "width+device-width, initial-scal=1.0">
+        <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="{% sass_src 'main.scss' %}">
+
+        {% block title %}
+        {% endblock title %}
+    </head>
+    <body>
+        <header>
+            <h1>Django Budgets</h1>
+            {% if user.is_authenticated %}
+                <h4>Welcome, {{ user.username }}</h4>
+            {% endif %}
+        </header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'budgets' %}">Budgets</a></li>
+                    {% if user.is_superuser %}
+                    <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                    {% endif %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'django_registration_register' %}">Signup</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        </header>
+        <main>
+            {% block content %}
+            <h2>Nothing to see</h2>
+            {% endblock content %}
+        </main>
+        <footer></footer>
+    </body>
+</html>

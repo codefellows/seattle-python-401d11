@@ -1,0 +1,51 @@
+header { grid-area: header; }
+nav { grid-area: nav; }
+main { grid-area: main; }
+footer { grid-area: footer; }
+
+body {
+    display: grid;
+    grid-template-areas:    "header header"
+                            "nav main"
+                            "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 160px 1fr 30px;
+    min-height: 100vh;
+}
+
+header h1 {
+    float: left;
+}
+header h4 {
+    float: right;
+    font-size: 1.2em;
+}
+main {
+    padding-top: 14px;
+}
+
+
+@media screen and (max-width: 800px) {
+    body {
+        grid-template-areas:    "header"
+                                "nav"
+                                "main"
+                                "footer";
+        grid-template-columns: 100%;
+        grid-template-rows: 140px 50px 1fr 20px;
+    }
+    h1 {
+        font-size: 2.8em;
+    }
+    h4 {
+        font-size: 1.6em;
+    }
+    h5 {
+        font-size: 1.2em;
+    }
+    nav ul li a {
+        float: left;
+        font-size: .9em;
+        padding: 6px;
+    }
+}
